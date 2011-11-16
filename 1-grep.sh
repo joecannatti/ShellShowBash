@@ -1,7 +1,7 @@
 # The three tools I use most to find something in the source are
 
  1. grep (sometimes ack)
- 2. sed 
+ 2. sed (very powerful, we will use a small subset here)
  3. find
 
 # grep
@@ -74,10 +74,21 @@ vi $(!!)
   661  history | sed "/START2/,$ p"
   662  history | sed -n "/START2/,$ p"
 
+#return a table from schema.rb
+  672  h
+  673  sed -n "/table \"people\"/,/^ *end/ p" db/schema.rb
+  674  cd -
+
+#find all files ending in .orig This is needed after some merges...turns out
+find . -name \*orig
+
+#find all files ending in .rb
+find . -name \*rb 
+
+#find all files ending in .rb modified in the last day and copy them to a test file if they contain 'render'
+find . -name \*rb -mtime 1 | while read line; do if grep -q render $line; then cp $line ~/Desktop; fi; done;
+man find
+#SO MANY OPTIONS
 
 
 
-grep -r link_to_resource .
-
-
-grep -ri 
