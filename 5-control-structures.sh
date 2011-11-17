@@ -117,16 +117,6 @@ echo $?
 
 if [ $? -ne 0 ]; then echo "failed!"; fi
 
-#for loop iterates a array
-for i in {0..7}; do echo $i; done
-
-#build a string of a certain length. Useful for testing
-for i in {0..255}; do echo -n x; done
-#on mac copy the string so you can CTRL-V it somewhere
-for i in {0..255}; do echo -n x; done | pbcopy
-
-#it will loop a stream split on spaces
-for i in $(find . -name \*.hs); do echo i; done
 
 #CAREFUL! if there are spaces in the file names this will all kinds of fail
 #this is better
@@ -141,30 +131,9 @@ read variable_name
 #combine the two to get a loop that processes echo line of stdin.
 process_that_cranks_out_lines | while read line; do echo $line; done
 
-
-
-
-
-
-
 #script syntax
 if [ -a 0-history-basics.sh ]; then 
   echo aoeu
 fi
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#string comparison x thing
