@@ -39,8 +39,6 @@ find . -name \*.rb | while read line; do grep instance_eval $line | head -10 ; d
 ls *.{jpg,jpeg,png}
 #non subshell math operations
 $((4 + 6))
-#and redirecting stdin stdout together
-ls -al &> /dev/null
 
 # SheBang (#!) your files to the most common shell type that will support your script
 #.......If you are on Linux or OS X you will have BASH though. So I wouldn't worry too much about this.
